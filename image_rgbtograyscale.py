@@ -34,4 +34,5 @@ def rgb2grayscale_main(date, host_id):
     img_tograyscale.start()
     img_tograyscale.join()
     end = time.time()
+    
     print((end-start))

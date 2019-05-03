@@ -4,7 +4,7 @@ import time
 
 start = time.time() 
 # Read color image
-img = cv2.imread('gambar.jpg')
+img = cv2.imread('My_Img.JPG')
 
 # Get the image's height, width, and channels
 height, width, channel = img.shape

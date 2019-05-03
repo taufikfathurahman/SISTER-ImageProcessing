@@ -8,7 +8,7 @@ from canny_edge_detection import canny_ed
 from image_rgbtohsv import rgb2hsv_main
 from image_rgbtograyscale import rgb2grayscale_main
 
-server = SimpleXMLRPCServer(('10.124.2.21', 8000), allow_none=True)
+server = SimpleXMLRPCServer(('172.20.10.2', 8000), allow_none=True)
 print('Listening on port 8000')
 
 server.register_function(image_upload, 'image_upload')

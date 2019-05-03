@@ -1,8 +1,5 @@
 import numpy as np
 import cv2
-import os
-import re
-from threading import Thread
 import time
 
 start = time.time() 

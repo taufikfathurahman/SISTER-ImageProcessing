@@ -21,8 +21,8 @@ def main_menu():
     print("| 3. | Convert Image to Grayscale                   |")
     print("| 4. | Convert Image to HSV                         |")
     print("| 5. | Face and Eyes Detection                      |")
-    print("| 6. | Download Image                               |")
-    print("| 7. | Change Image to Edit                         |")
+    print("| 6. | Change Image to Edit                         |")
+    print("| 7. | Download Image                               |")
     print("| 8. | Exit                                         |")
     print('|----|----------------------------------------------|')
 
@@ -38,20 +38,20 @@ def load_image(proxy, date, host_id):
 
 def success_msg():    
     print('|----|----------------------------------------------|')
-    print('| <> | $ Image Processing Success !                 |')
+    print('| <> | $ Function Successfully Executed !           |')
     print('|----|----------------------------------------------|')
     input("Press enter to continue")
 
 def failed_msg():    
     print('|----|----------------------------------------------|')
-    print('| <> | $ Image Processing Failed !                  |')
+    print('| <> | $ Function Failed Executed !                 |')
     print('|----|----------------------------------------------|')
     input("Press enter to continue")
 
 if __name__ == "__main__":
     host_id = str(socket.gethostname())
     date = str(datetime.datetime.now().date())
-    proxy = xmlrpc.client.ServerProxy("http://10.124.2.21:8000")
+    proxy = xmlrpc.client.ServerProxy("http://172.20.10.2:8000")
     choice = 99
     
     header(host_id)
