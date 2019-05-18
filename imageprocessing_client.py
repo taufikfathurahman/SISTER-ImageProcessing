@@ -20,10 +20,12 @@ def main_menu():
     print("| 2. | Image Smoothing                              |")
     print("| 3. | Convert Image to Grayscale                   |")
     print("| 4. | Convert Image to HSV                         |")
-    print("| 5. | Face and Eyes Detection                      |")
-    print("| 6. | Change Image to Edit                         |")
-    print("| 7. | Download Image                               |")
-    print("| 8. | Exit                                         |")
+    print("| 5. | Convert Image to CMY                         |")
+    print("| 6. | Convert Image to ycbcr                       |")
+    print("| 7. | Face and Eyes Detection                      |")
+    print("| 8. | Change Image to Edit                         |")
+    print("| 9. | Download Image                               |")
+    print("| 10.| Exit                                         |")
     print('|----|----------------------------------------------|')
 
     return input('| <> | Choose Menu =>')
@@ -57,7 +59,7 @@ if __name__ == "__main__":
     header(host_id)
     load_image(proxy, date, host_id)
 
-    while(choice != "8"):        
+    while(choice != "10"):        
         choice = main_menu()
         if (choice == '1'):
             try:
@@ -85,11 +87,23 @@ if __name__ == "__main__":
                 failed_msg()
         elif (choice == '5'):
             try:
-                proxy.object_detection(date, host_id)
+                proxy.rgb2cmyk_main(date, host_id)
                 success_msg()
             except:
                 failed_msg()
         elif (choice == '6'):
+            try:
+                proxy.rgb2ycrcb_main(date, host_id)
+                success_msg()
+            except:
+                failed_msg()
+        elif (choice == '7'):
+            try:
+                proxy.object_detection(date, host_id)
+                success_msg()
+            except:
+                failed_msg()
+        elif (choice == '8'):
             try:
                 proxy.image_remove(date, host_id)
                 success_msg()
@@ -97,7 +111,7 @@ if __name__ == "__main__":
                 load_image(proxy, date, host_id)
             except:
                 failed_msg()
-        elif (choice == '7'):
+        elif (choice == '9'):
             print('| <> | Please Input New Image File Name + Extentions|')
             new_filename = input('| <> | => ')
             try:
@@ -107,7 +121,7 @@ if __name__ == "__main__":
                 success_msg()
             except:
                 failed_msg()
-        elif (choice == '8'):
+        elif (choice == '10'):
             
             print('| <> | $ echo \'Terimakasih ~~~ \'                    |')
             print('|___________________________________________________|')
@@ -118,4 +132,3 @@ if __name__ == "__main__":
                 failed_msg()
         else:
             print('| <> | $ Wrong Input !                              |')
-            
